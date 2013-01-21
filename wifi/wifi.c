@@ -105,6 +105,7 @@ static unsigned char dummy_key[21] = { 0x02, 0x11, 0xbe, 0x33, 0x43, 0x35,
 
 static int insmod(const char *filename, const char *args)
 {
+    return 0;
     void *module;
     unsigned int size;
     int ret;
@@ -122,6 +123,7 @@ static int insmod(const char *filename, const char *args)
 
 static int rmmod(const char *modname)
 {
+    return 0;
     int ret = -1;
     int maxtry = 10;
 
@@ -245,6 +247,8 @@ int is_wifi_driver_loaded() {
             goto unloaded;
     }
     modname[cnt++] = ' ';
+
+    return 1;
 
     /*
      * If the property says the driver is loaded, check to
